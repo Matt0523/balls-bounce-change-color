@@ -1,0 +1,206 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green">
+</div>
+
+<div id="ball2" style="
+  z-index:10;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:rgb(189, 7, 16)">
+</div>
+
+<div id="ball3" style="
+  z-index:10;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:rgb(8, 180, 223)">
+</div>
+
+<div id="ball4" style="
+  z-index:3;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:rgb(123, 29, 211)">
+</div>
+
+
+<script>
+
+var velocityX = 5;
+var velocityY = 3;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+var ball2 = document.getElementById('ball2');
+var ball3 = document.getElementById('ball3');
+var ball4 = document.getElementById('ball4');
+var reverse = false;
+var Xmin = 0;
+var Xmax = 400;
+var Ymin = 0;
+var Ymax = 400;
+ 
+
+// Ball  
+// ----------------
+function moveBall(){
+
+  positionX = positionX + velocityX;
+  ball.style.left = positionX + 'px';
+  positionY = positionY + velocityY;
+  ball.style.top = positionY + 'px';
+
+  if(positionX > Xmax){
+    velocityX = -velocityX;
+    ball.style.background = 'grey';  
+  }
+
+  if(positionX === Xmin){
+    velocityX = -velocityX;
+    ball.style.background = 'green';
+  }
+
+  if(positionY > Ymax){
+    velocityY = -velocityY;
+    ball.style.background = 'red';
+  }
+  if(positionY === Ymin){
+    velocityY = -velocityY
+    ball.style.background = 'blue';
+  }
+}
+
+setInterval(moveBall, 50);
+
+// Ball 2
+// ----------------
+
+var velocityX2 = 10;
+var velocityY2 = 1;
+var positionX2 = 0;
+var positionY2 = 100;
+
+function moveBall2(){
+positionX2 = positionX2 + velocityX2;
+ball2.style.left = positionX2  + 'px';
+positionY2 = positionY2 + velocityY2;
+ball2.style.top = positionY2  + 'px';
+
+if(positionX2 > Xmax){
+  velocityX2 = -velocityX2;
+  ball2.style.background = '#A5E1AD'; 
+}
+
+if(positionX2 === Xmin){
+  velocityX2 = -velocityX2;
+  ball2.style.background = '#511281';
+}
+
+if(positionY2 > Ymax){
+  velocityY2 = -velocityY2;
+  ball2.style.background = '#4CA1A3';
+}
+if(positionY2 === Ymin){
+  velocityY2 = -velocityY2;
+  ball2.style.background = '#A5E1AD';
+}
+}
+
+setInterval(moveBall2, 50);
+
+// Ball 3
+// ----------------
+
+var velocityX3 = 4;
+var velocityY3 = 7;
+var positionX3 = 0;
+var positionY3 = 200;
+
+function moveBall3(){
+
+positionX3 = positionX3 + velocityX3;
+ball3.style.left = positionX3  + 'px';
+positionY3 = positionY3 + velocityY3;
+ball3.style.top = positionY3  + 'px';
+
+if(positionX3 > Xmax){
+  velocityX3 = -velocityX3;
+  ball3.style.background = '#053742';
+}
+
+if(positionX3 === Xmin){
+  velocityX3 = -velocityX3;
+  ball3.style.background = '#39A2DB';
+}
+
+if(positionY3 > Ymax){
+  velocityY3 = -velocityY3;
+  ball3.style.background = "A2DBFA";
+}
+if(positionY3 <= Ymin){
+  velocityY3 = -velocityY3;
+  ball3.style.background = "#E8F0F2";
+}
+}
+
+setInterval(moveBall3, 50);
+
+setInterval(moveBall2, 50);
+
+// Ball 4
+// ----------------
+
+var velocityX4 = 7;
+var velocityY4 = 10;
+var positionX4 = 0;
+var positionY4 = 300;
+
+function moveBall4(){
+
+positionX4 = positionX4 + velocityX4;
+ball4.style.left = positionX4  + 'px';
+positionY4 = positionY4 + velocityY4;
+ball4.style.top = positionY4 + 'px';
+
+if(positionX4 > Xmax){
+  velocityX4 = -velocityX4;
+  ball4.style.background = '#52006A';
+}
+
+if(positionX4 === Xmin){
+  velocityX4 = -velocityX4;
+  ball4.style.background = '#CD113B';
+}
+
+if(positionY4 > Ymax){
+  velocityY4 = -velocityY4;
+  ball4.style.background = 'FF7600';
+}
+if(positionY4 <= Ymin){
+  velocityY4 = -velocityY4;
+  ball4.style.background = '#FFA900';
+}
+}
+
+setInterval(moveBall4, 50);
+
+</script>
